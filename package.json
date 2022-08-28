@@ -1,0 +1,43 @@
+{
+  "name": "app-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "main_comment": "This is the entry point for NWjs.",
+  "main": "public/index.html",
+  "domain_comment": "This is the domain for NWjs, as the content runs as extension in a Chromium-instance. You might want to adapt this to your needs.",
+  "domain": "app-foobar",
+  "chromium-args": "--allow-file-access-from-files --allow-file-access --user-data-dir",
+  "window_comment": "These are settings that can be made to configure the window/frame of the NWjs-app.",
+  "window": {
+    "frame_comment": "This is important to have a window which we can style (title bar, etc.)",
+    "frame": false,
+    "width": 1024,
+    "height": 768,
+    "position": "center",
+    "transparent_comment": "This is important to have a window which we can style (title bar, etc.)",
+    "transparent": true,
+    "icon": "src/assets/icons/application.png"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "start ./nwjs-rt/nw.exe . && start rollup -c -w",
+    "start": "start ./nwjs-rt/nw.exe ."
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "pug": "^3.0.2",
+    "rollup": "^2.3.4",
+    "rollup-plugin-imagetools": "^3.0.5",
+    "rollup-plugin-polyfill-node": "^0.10.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-svelte-svg": "^1.0.0-beta.6",
+    "sass": "^1.54.5",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.10.7",
+    "systeminformation": "^5.12.6"
+  }
+}

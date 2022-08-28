@@ -1,0 +1,14 @@
+<!-- src/assets/icons/minimize.svg -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xml:space="preserve"
+
+     viewBox="0 0 512 512"
+
+     style="transition: all .5s; width: var(--sizeIcon, 32px); height: var(--sizeIcon, 32px); fill: var(--colorIcon, currentColor); stroke: var(--colorIcon, currentColor);">
+  <rect width="416" height="32" x="48" y="448" />
+</svg>

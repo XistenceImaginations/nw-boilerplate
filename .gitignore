@@ -1,0 +1,9 @@
+/node_modules/
+/nwjs-rt/
+/public/app.js
+/public/app.js.map
+/public/app.css
+/public/app.css.map
+/public/assets
+.DS_Store
+.vscode
