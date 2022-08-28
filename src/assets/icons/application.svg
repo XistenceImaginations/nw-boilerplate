@@ -1,0 +1,19 @@
+<!-- src/assets/icons/application.svg -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xml:space="preserve"
+
+     viewBox="0 0 65 65"
+
+     style="transition: all .5s; width: var(--sizeIcon, 32px); height: var(--sizeIcon, 32px); fill: var(--colorIcon, currentColor); stroke: var(--colorIcon, currentColor);">
+  <path id="shape"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        style="transform: translate(7.5px, 0); stroke-width: 5;"
+        d="M 10 10 l 10 10 q 5 5 0 10 l -10 10 M 40 10 l -10 10 q -5 5 0 10 l 7.5 7.5 q 2.5 2.5 2.5 5 l 0 12.5 M 40 25 l 0.01 0.01" />
+</svg>

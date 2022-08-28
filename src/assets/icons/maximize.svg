@@ -1,0 +1,14 @@
+<!-- src/assets/icons/maximize.svg -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xml:space="preserve"
+
+     viewBox="0 0 512 512"
+
+     style="transition: all .5s; width: var(--sizeIcon, 32px); height: var(--sizeIcon, 32px); fill: var(--colorIcon, currentColor); stroke: var(--colorIcon, currentColor);">
+  <path d="M472,48H40.335a24.027,24.027,0,0,0-24,24V456a24.027,24.027,0,0,0,24,24H472a24.027,24.027,0,0,0,24-24V72A24.027,24.027,0,0,0,472,48Zm-8,32v71.981L48.335,151.49V80ZM48.335,448V183.49L464,183.981V448Z" />
+</svg>

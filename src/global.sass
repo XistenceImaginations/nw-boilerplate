@@ -1,0 +1,158 @@
+// src/global.sass
+
+/*
+  Here you can place global styles and variables.
+
+
+
+/*
+  Global fonts.
+@font-face
+  font-family: 'Open Sans'
+  src: url('./assets/fonts/open-sans/OpenSans-Italic-VariableFont_wdth,wght.ttf') format("truetype-variations")
+  font-weight: 1 999
+
+/*
+  Global custom properties (Theming, default here: 'dark'/'system').
+:root
+  --hue: 40
+  --sat: 50%
+  // Light value for text.
+  --lgtText: 80%
+  // Light value for primary/foreground color.
+  --lgtPrim: 60%
+  // Light value for background color.
+  --lgtBg: 15%
+  // Alternate light value for background color (slightly lighter).
+  --lgtBgAlt: 20%
+
+  --colorPrimaryHSL: var(--hue) var(--sat) var(--lgtPrim)
+  --colorBackgroundHSL: var(--hue) 0% var(--lgtBg)
+  --colorBackgroundHSLAlt: var(--hue) 0% var(--lgtBgAlt)
+
+  --colorPrimary: hsl(var(--colorPrimaryHSL))
+  --colorBackground: hsl(var(--colorBackgroundHSL))
+  --colorBackgroundAlt: hsl(var(--colorBackgroundHSLAlt))
+  --colorText: hsl(0 0% var(--lgtText))
+
+  --marginIcon: 4px
+  --sizeTitleBar: 30px
+  --sizeStatusBar: 30px
+  --sizeHeader: 64px
+  --sizeFooter: 24px
+  --colorCompBg: var(--colorBackgroundAlt)
+  --colorPageBg: var(--colorBackground)
+  --colorCompFg: hsl(0 0% 60%)
+  --colorCompFgHighlight: hsl(0 0% 90%)
+  --colorBg: var(--colorPageBg)
+  --colorFg: var(--colorCompFg)
+  --colorIcon: var(--colorCompFg)
+
+// Theme 'light'.
+:root[data-theme='light']
+  --lgtText: 20%
+  --lgtPrim: 30%
+  --lgtBg: 90%
+  --lgtBgAlt: 85%
+
+
+
+html, body
+  position: relative
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+
+body
+  color: var(--colorText)
+  background-color: transparent
+  box-sizing: border-box
+  font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Ubuntu', 'Helvetica Neue', sans-serif
+  display: grid
+  grid-template-rows: var(--sizeTitleBar) auto var(--sizeStatusBar)
+  grid-template-column: auto
+  grid-template-areas: "titlepane" "page" "statusBar"
+  overflow: hidden
+  font-size: 16px
+  font-weight: 200
+  >nav
+    --colorIcon: var(--colorPrimary)
+    grid-area: titlepane
+    display: flex
+    width: 100%
+    background-color: var(--colorCompBg)
+    inset: 0
+    align-items: stretch
+    font-weight: bold
+    position: relative
+    border-radius: .5em .5em 0 0
+    overflow: hidden
+    text-transform: capitalize
+    color: var(--colorPrimary)
+    /* This makes the 'nav-bar' draggable plus you can maximize/restore by double-clicking it.
+    -webkit-app-region: drag
+    >div
+      flex: 1
+      text-transform: capitalize
+      line-height: var(--sizeTitleBar)
+    >button
+      --sizeIcon: calc(var(--sizeTitleBar) * .5)
+      /* Buttons need to be set to be non-draggable, otherwise they won't be operational.
+      -webkit-app-region: no-drag
+      border: none
+      background: none
+      flex: 0
+      min-width: calc(var(--sizeTitleBar) * 1.5)
+      min-height: var(--sizeTitleBar)
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 0
+      color: var(--colorCompFg)
+      transition: box-shadow 1s
+      >svg
+        margin: var(--marginIcon)
+      &:hover
+        color: var(--colorCompFgHighlight)
+        box-shadow: inset 0 0 0 50px hsl(0 0% 100% / .1)
+      &:first-of-type
+        --sizeIcon: calc(var(--sizeTitleBar) * .75)
+        &:hover
+          box-shadow: inset 0 0 0 50px hsl(var(--colorPrimaryHSL) / .5)
+      &:last-of-type
+        &:hover
+          box-shadow: inset 0 0 0 50px hsl(0 100% 50% / .5)
+      &.--hide
+        display: none
+    >label
+      position: absolute
+      inset: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      font-weight: 400
+      font-size: .75em
+      pointer-events: none
+    &.--maximized
+      border-radius: 0
+  >div
+    background-color: var(--colorPageBg)
+    grid-area: page
+  >footer
+    grid-area: statusBar
+    background-color: var(--colorCompBg)
+    border-radius: 0 0 .5em .5em
+    &.--maximized
+      border-radius: 0
+
+a
+  color: black
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  &:visited
+    color: rgb(0,80,160)
+
+/*
+  Up from here all Svelte-related CSS will be (automatically) injected (when compiled to 'app.css')
