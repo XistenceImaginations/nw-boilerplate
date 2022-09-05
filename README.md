@@ -1,16 +1,30 @@
 # NW.js App Boilerplate (using Svelte/Pug/SASS)
 
 This setup uses [NW.js](https://nwjs.io/) for the frame and functional part ([Node.js](https://nodejs.org/en/), etc.). Additionally [Svelte](https://svelte.dev/), [SASS](https://sass-lang.com/) and [Pug](https://pugjs.org/api/getting-started.html) are used to build the ui with Rollup as buildsystem.
-NWjs is included directly in './nwjs-rt', so it can be referenced relatively.
 Please note the Issue/Troubleshooting/Q&A section at the end of this document in case of question or problems, there might be already an answer for you.
 
 ## Installation
-
+### Install project
   ```bash
   git clone https//foobar-foo/foo.git app-boilerplate
 
   cd app-boilerplate
   npm i
+  ```
+
+### Install NW.js
+- Go to https://nwjs.io/ and download thw SDK (recommend)
+- Unpack the archive to a temporary folder
+- Copy/Move that temporary folder into this project-root folder and rename the temporary folder to 'nwjs-rt'
+- Done.
+
+#### Alternative to use NW.js
+If you don't want to add the runtime directly to your project or you have NW.js installed in a different location, then you need to adapt a few lines.
+- Edit the 'package.json'
+- Change the lines for 'scripts/dev' and 'scripts/start' so that './nwjs-rt/nw.exe' points to the 'nw' executable in your NW.js-installation-path.
+
+### Running the project
+  ```
   npm run dev
 
   or
@@ -19,12 +33,7 @@ Please note the Issue/Troubleshooting/Q&A section at the end of this document in
   ```
 
 ## Adapting scripts in package.json
-
-Personally i have a copy of the NW.js installation inside the project in a folder called 'nwjs-rt'. Now you can 
-- either put a copy of your installation inside such a folder (copy the data in a way that will have a 'nw.exe' directly under 'nwjs-rt', no deeper nested subfolder!)
-- or you adapt the scripts in package.json (scripts/dev & scripts/starts to match the path for nw.exe to your local installation of NW.js)
-
-Also note that the script are adapted for a Windows environment (s. the 'start...'). If you're under Linux you want to change that, but then in away that two processes can be started in parallel, not serial.
+Note that the script are adapted for a Windows environment (s. the 'start...'). If you're under Linux you want to change that, but then in away that two processes can be started in parallel, not serial (mostly for the development-script as rollup and nw need to be start parallel).
 
 ## Development and Preview
 
